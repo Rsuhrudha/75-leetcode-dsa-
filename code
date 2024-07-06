@@ -1,0 +1,24 @@
+75 Sort colors
+Statement:-
+Given an array nums with n objects colored red, white, or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white, and blue.
+We will use the integers 0, 1, and 2 to represent the color red, white, and blue, respectively.
+You must solve this problem without using the library's sort function.
+Example 1:
+Input: nums = [2,0,2,1,1,0]
+Output: [0,0,1,1,2,2]
+code:-
+l=list(map(int,input().split(" ")))
+s=0
+m=0
+e=n-1
+while(m<=e):
+    if l[m]==0:
+        l[s],l[m]=l[m],l[s]
+        s=m
+        m=m+1
+    elif l[m]==1:
+        m=m+1
+    elif l[m]==2:
+        l[m],l[e]=l[e],l[m]
+        e=e-1
+print(l)
